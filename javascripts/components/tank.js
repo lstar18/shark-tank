@@ -4,7 +4,7 @@ import personData from '../helpers/data/personData.js'
 const tankBuilder = () => {
 const persons = personData.getAlivePersons();
 let domString = '';
-domString += '<div class="card" style="width: 18rem;">'
+domString += '<div class="card">'
 domString += '<div class="card-header"> Shark Tank </div>'
 domString += '<ul class="list-group list-group-flush">'
 
