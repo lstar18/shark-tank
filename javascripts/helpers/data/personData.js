@@ -39,7 +39,10 @@ const randomMurder = () => {
     const randomNum = Math.floor(Math.random()* alivePeople.length);
     const deadPersonsId = alivePeople[randomNum].id
     const deadMan = persons.findIndex((x) => x.id === deadPersonsId)
-   persons[deadMan].isDead = true;
+    persons[deadMan].isDead = true;
 }
-
-export default { getAlivePersons, getDeadPersons, randomMurder };
+const bringToLife = (personId) => {
+    const itLives = persons.findIndex((x) => x.id === personId)
+    persons[itLives].isDead = false;
+}
+export default { getAlivePersons, getDeadPersons, randomMurder, bringToLife };
