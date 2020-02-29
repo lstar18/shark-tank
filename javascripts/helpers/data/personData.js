@@ -32,6 +32,14 @@ return persons.filter((x)=> x.isDead=== false);
 
 const getDeadPersons = () => {
 return persons.filter((x)=> x.isDead);
+};
+
+const randomMurder = () => {
+    const alivePeople = getAlivePersons();
+    const randomNum = Math.floor(Math.random()* alivePeople.length);
+    const deadPersonsId = alivePeople[randomNum].id
+    const deadMan = persons.findIndex((x) => x.id === deadPersonsId)
+   persons[deadMan].isDead = true;
 }
 
-export default { getAlivePersons, getDeadPersons };
+export default { getAlivePersons, getDeadPersons, randomMurder };
